@@ -1,8 +1,6 @@
 /************************************************************
 General
 ************************************************************/
-■自分(Unity)側をclient, 相手をserverと定義
-
 ■【Unity】Unityエディタのフォーカスが外れてもゲームを実行し続ける
 	http://baba-s.hatenablog.com/entry/2014/02/19/000000
 	
@@ -13,6 +11,13 @@ General
 		・Resolution項目の「Run In Background」をオンにする
 		->これで、Unityエディタでゲームを再生中にブラウザやエクスプローラなど他のアプリケーションにフォーカスを当ててもゲームが常に再生される状態になります
 		
+■firewall
+oFでtestした時は、Firewall offしなければ通らなかったが、unityでは、その必要がなかった.
+また、win/macとも、wifiなどのnetworkから切り、localでのみ接続してtestしたが、動作OK.
+
+一応、win 10でfirewall offする手順は以下
+	http://www.wannko.net/windows10/kihon/firewall.html
+
 
 /************************************************************
 my 操作手順
@@ -26,6 +31,16 @@ my 操作手順
 			
 		OSCController.cs
 	
+	
+	注意
+		OSCController.csの先頭に
+			using UnityOSC;
+		が必要
+		
+		以下のフォルダ内に保存されている
+			/Users/nobuhiro/Documents/source/Unity/Assets 
+		UnityOSC/src フォルダをAssetにFinder上からcopyして使用.
+		これらのscriptは、元のscriptから変更済み.
 		
 □UnityOSC で OSC を受信する / MaxMSP で送信する
 	http://neareal.com/2573/
